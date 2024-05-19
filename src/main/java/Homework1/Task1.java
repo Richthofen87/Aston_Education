@@ -1,20 +1,20 @@
-package ru.aston.education;
+package Homework1;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
-public class Main {
+public class Task1 {
 
     private static final List<Animal> animals;
 
     static {
         animals = new ArrayList<>() {{
-            add(new Dog("Sharik" , 5));
+            add(new Dog("Sharik", 5));
             add(new Cat("Mursic", 3));
         }};
     }
@@ -35,7 +35,7 @@ public class Main {
         private String name;
 
         public void saySomeThing() {
-            System.out.printf("A %s named %s said " ,
+            System.out.printf("A %s named %s said ",
                     this.getClass().getSimpleName(), name);
         }
     }
