@@ -1,4 +1,4 @@
-package homework5.task5_1;
+package homework6.task6_1;
 
 public class CredentialsHandler {
     public static boolean handle(String login, String password, String confirmPassword) {

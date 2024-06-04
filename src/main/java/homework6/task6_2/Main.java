@@ -1,4 +1,4 @@
-package homework5.task5_2;
+package homework6.task6_2;
 
 import java.util.Scanner;
 import java.io.IOException;

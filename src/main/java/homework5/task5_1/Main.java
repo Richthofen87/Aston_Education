@@ -1,18 +1,16 @@
 package homework5.task5_1;
 
-import java.util.Scanner;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter login:");
-        String login = scanner.nextLine();
-        System.out.println("Enter password:");
-        String password = scanner.nextLine();
-        System.out.println("Please confirm password:");
-        String confirmPassword = scanner.nextLine();
-        scanner.close();
-        boolean isUserCredentialsValid = CredentialsHandler.handle(login, password, confirmPassword);
-        if (isUserCredentialsValid) System.out.println("\nCongrats! Your credentials are valid!");
+        List<Integer> list = Arrays.asList(1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9);
+        Optional<Integer> optional = list.stream()
+                .distinct()
+                .filter(i -> i % 2 == 0)
+                .reduce(Integer::sum);
+        optional.ifPresent(System.out::println);
     }
 }

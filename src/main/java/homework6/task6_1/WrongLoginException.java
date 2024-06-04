@@ -1,4 +1,4 @@
-package homework5.task5_1;
+package homework6.task6_1;
 
 public class WrongLoginException extends Exception {
     public WrongLoginException() {
