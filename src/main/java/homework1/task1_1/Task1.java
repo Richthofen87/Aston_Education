@@ -1,4 +1,4 @@
-package homework1;
+package homework1.task1_1;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

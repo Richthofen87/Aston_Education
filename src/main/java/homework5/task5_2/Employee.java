@@ -44,7 +44,7 @@ public class Employee {
     public static List<Employee> getEmloyeesOlderThan30AndSortByAge(List<Employee> employees) {
         return employees.stream()
                 .filter(e -> e.age > 30)
-                .sorted(Comparator.comparingInt(e -> e.age))
+                .sorted(Comparator.comparing(Employee::getAge))
                 .toList();
     }
 
@@ -72,6 +72,7 @@ public class Employee {
     public static float getAverageSalaryOfEmloyees(List<Employee> employees) {
         return (float) employees.stream()
                 .mapToInt(Employee::getSalary)
-                .average().getAsDouble();
+                .average()
+                .getAsDouble();
     }
 }
