@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class AbstractMarket {
-    public abstract Map<Integer, Good> getGoods();
-    public abstract void setGoods(Map<Integer, Good> goods);
+    public abstract Map<Good, Integer> getGoods();
+    public abstract void setGoods(Map<Good, Integer> goods);
 
     @Data
     public static class Basket {

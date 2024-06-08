@@ -14,11 +14,11 @@ public class Buyer implements IBuyer, IUseBasket {
 
     private final UUID buyerId;
     private MiniMarket.Basket basket;
-    private final Map<Integer, MiniMarket.Good> marketGoods;
+    private final Map<AbstractMarket.Good, Integer> marketGoods;
 
     private final Random random = new Random();
 
-    public Buyer(UUID buyerId, Map<Integer, AbstractMarket.Good> marketGoods) {
+    public Buyer(UUID buyerId, Map<AbstractMarket.Good, Integer> marketGoods) {
         this.buyerId = buyerId;
         this.marketGoods = marketGoods;
     }
@@ -64,6 +64,6 @@ public class Buyer implements IBuyer, IUseBasket {
     }
 
     private List<MiniMarket.Good> getMarketGoods() {
-        return marketGoods.values().stream().toList();
+        return new ArrayList<>(marketGoods.keySet());
     }
 }

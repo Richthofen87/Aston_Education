@@ -10,25 +10,25 @@ import java.util.HashMap;
 @EqualsAndHashCode(callSuper = true)
 public class MiniMarket extends AbstractMarket {
 
-    private Map<Integer, Good> goods;
+    private Map<Good, Integer> goods;
 
     public MiniMarket() {
         goods = new HashMap<>() {{
-           put(450, Good.FISH);
-           put(175, Good.MILK);
-           put(110, Good.BEAR);
-           put(145, Good.EGGS);
-           put(650, Good.MEAL);
-           put(250, Good.POTATO);
-           put(350, Good.FRUITS);
-           put(75, Good.SNICKERS);
-           put(150, Good.COCA_COLA);
-           put(500, Good.VEGETABLES);
+           put(Good.FISH, 450);
+           put(Good.MILK, 175);
+           put(Good.BEAR, 110);
+           put(Good.EGGS, 145);
+           put(Good.MEAL, 650);
+           put(Good.POTATO, 250);
+           put(Good.FRUITS, 350);
+           put(Good.SNICKERS, 75);
+           put(Good.COCA_COLA, 150);
+           put(Good.VEGETABLES, 500);
         }};
     }
 
     @Override
-    public Map<Integer, Good> getGoods() {
+    public Map<Good, Integer> getGoods() {
         return new HashMap<>(goods);
     }
 }

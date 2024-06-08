@@ -1,6 +1,7 @@
 package homework7.task7_1;
 
 import homework7.task7_1.buyer.Buyer;
+import homework7.task7_1.market.AbstractMarket;
 import homework7.task7_1.market.MiniMarket;
 
 import java.util.Map;
@@ -14,7 +15,7 @@ import java.util.concurrent.ScheduledFuture;
 public class Main {
 
     private static final Random random = new Random();
-    private static final Map<Integer, MiniMarket.Good> marketGoods = new MiniMarket().getGoods();
+    private static final Map<AbstractMarket.Good, Integer> marketGoods = new MiniMarket().getGoods();
 
     public static void main(String[] args) throws InterruptedException {
         var marketScheduler = Executors
@@ -25,7 +26,7 @@ public class Main {
         ScheduledFuture<?> closeTheMarket = closeMarketScheduler.schedule(() -> {
             marketScheduler.shutdownNow();
             executorService.shutdown();
-        }, 2, TimeUnit.MINUTES);
+        }, 30, TimeUnit.SECONDS);
 
         marketScheduler.scheduleAtFixedRate(createNewBuyer(executorService),
                 0, 1, TimeUnit.SECONDS);
