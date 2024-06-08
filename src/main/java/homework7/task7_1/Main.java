@@ -34,7 +34,7 @@ public class Main {
         while (!executorService.isTerminated());
         closeMarketScheduler.shutdownNow();
 
-        System.out.println("\n\nСуперМегаМаркет закрыт! Все товары проданы! Ждём вас снова!");
+        System.out.println("\n\nСуперМегаМаркет закрыт! Все товары проданы! Больше не приходите!");
     }
 
     private static Runnable createNewBuyer(ExecutorService executorService) {
